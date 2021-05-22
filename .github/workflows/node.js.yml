@@ -5,8 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x]
-        mongodb-version: [4.0, 4.2, 4.4]
+        node-version: [16.x]
+        mongodb-version: [4.2, 4.4]
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -23,4 +23,4 @@ jobs:
     - run: npm test
       env:
         CI: true
-        MONGOOSE_TEST_URI: mongodb+srv://<anwar>:<258963>@cluster0.xfyfj.mongodb.net/test
+        MONGOOSE_TEST_URI: mongodb+srv://anwa:<258963>@cluster0.xfyfj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
