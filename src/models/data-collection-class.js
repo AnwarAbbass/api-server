@@ -13,7 +13,7 @@ class DataMang {
         }
     }
 
-    create(obj) {
+    creat(obj) {
         const doc = new this.db(obj);
         return doc.save();
     }

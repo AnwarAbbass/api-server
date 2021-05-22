@@ -8,10 +8,10 @@ const ClothesModel = require('../models/clothes.js');
 const dataMang = new DataMang(ClothesModel)
 
 router.get('/', getClothes);
-router.get('/:id', validator, getById);
+router.get('/:id', getById);
 router.post('/', createClothes);
-router.put('/:id', validator, updateClothes);
-router.delete('/:id', validator, deleteById);
+router.put('/:id', updateClothes);
+router.delete('/:id', deleteById);
 
 async function getClothes(req, res) {
     try {

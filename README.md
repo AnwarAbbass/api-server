@@ -19,12 +19,40 @@ PORT - Port Number
 MONGOOSE_URI - mongodb://localhost:27017/DB_NAME
 
 ## Running the app
-`npm start`
-**Endpoint**: 
-- /status
-- /api/v1/food
-- /api/v1/clothes
+- `npm start`
+   - Endpoint: /
 Returns Object
+
+{
+  you are in the home page
+}
+
+  - Endpoint: /api/v1/food/
+
+Returns Object
+```
+localhost:3000/api/v1/food/
+
+{
+    "id": "c89686d4-d4cd-4410-943c-dde2ef133b85",
+    "data": {
+        "name": "burgger",
+        "price": "7JD"
+    }
+}
+```
+  - Endpoint: /api/v1/clothes/
+
+Returns Object
+```
+{
+    "id": "c89686d4-d4cd-4410-943c-dde2ef133b85",
+    "data": {
+        "name": "Dress",
+        "price": "7JD"
+    }
+}
+```
 
 
 ## Tests
@@ -34,3 +62,4 @@ Returns Object
 UML
 (Created with diagrams)
 ![uml]()
+

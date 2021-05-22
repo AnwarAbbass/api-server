@@ -6,7 +6,7 @@ const morgan = require('morgan');
 
 const notFoundHandler = require('./error-handlers/404.js');
 const errorHandler = require('./error-handlers/500.js');
-const clothesHandler = require('./routes/clothes.js');
+const clothesHandler = require('./routes/clothes');
 const foodHandler = require('./routes/food');
 
 const app = express();
@@ -19,10 +19,10 @@ app.use(logger)
 
 
 app.get('/', home);
-app.use('/api/v1/clothes/', clothesHandler);
-app.use('/api/v1/food/', foodHandler);
+app.use('/api/v1/clothes', clothesHandler);
+app.use('/api/v1/food', foodHandler);
 
-
+app.get('/bad', (req, res) => { throw new Error('something error'); });
 app.use('*', notFoundHandler);
 app.use(errorHandler);
 
@@ -30,11 +30,10 @@ function home(req, res) {
     res.send('you are in the home page');
 }
 
-function start(PORT) {
-    app.listen(PORT, ()=>console.log(`you listen on port  ${PORT}`) )
-}
 
 module.exports = {
-    server: app,
-    start: start
+    app: app,
+    start: (PORT)=> {
+        app.listen(PORT, ()=>console.log(`you listen on port  ${PORT}`));
+    },
 };
