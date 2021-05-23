@@ -13,5 +13,6 @@ mongoose
         app.start(PORT);
     })
     .catch((err)=>{
+        console.log(err);
         console.log('ERROR',err.mssage);
     });
