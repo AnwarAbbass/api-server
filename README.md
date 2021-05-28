@@ -2,8 +2,8 @@
 
 ## Deployment Test
 Author: Anwar Abbass
-[tests report]()
-[front-end]()
+[tests report](https://github.com/AnwarAbbass/api-server/actions/runs/884640339)
+[heroku](https://api-server-anwar.herokuapp.com/)
 
 ## Setup
 `.env` requirements
@@ -59,7 +59,7 @@ Returns Object
 **Unit Tests**: `npm run test`
 **Lint Tests**: `npm run lint`
 
-UML
+## UML
 (Created with diagrams)
-![uml]()
+![uml](https://github.com/AnwarAbbass/api-server/blob/main/uml.png?raw=true)
 
